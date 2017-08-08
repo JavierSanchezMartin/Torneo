@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.torneo.model.Jugador;
+import com.torneo.service.JugadorService;
 
 @Controller
 public class AppController {
@@ -16,9 +17,8 @@ public class AppController {
 	
 	@RequestMapping("/index")
 	public String listarJugadores(Map<String, Object> map) {
-		map.put("listadoJugadores", new Jugador());
 		map.put("ListadoDeJugadores", jugadorService.listJugador());
-		return null;
+		return "listadoJugadores";
 	}
 	
 }
