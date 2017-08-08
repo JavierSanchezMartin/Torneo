@@ -13,7 +13,7 @@ public class Jugador {
 	@Id
 	@GeneratedValue
 	@Column(name = "ID_JUGADOR")
-	private int id_jugador;
+	private int id;
 	@Column(name = "DNI")
 	private String dni;
 	@Column(name = "NOMBRE")
@@ -21,25 +21,25 @@ public class Jugador {
 	@Column(name = "APELLIDO")
 	private String apellido;
 	@Column(name = "ID_EQUIPO")
-	private int id_equipo;
+	private int idEquipo;
 
 	public Jugador() {
 	}
 
-	public Jugador(int id_jugador, String dni, String nombre, String apellido, int id_equipo) {
-		this.id_jugador = id_jugador;
+	public Jugador(int id, String dni, String nombre, String apellido, int idEquipo) {
+		this.id = id;
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.id_equipo = id_equipo;
+		this.idEquipo = idEquipo;
 	}
 
-	public int getId_jugador() {
-		return id_jugador;
+	public int getIdJugador() {
+		return id;
 	}
 
-	public void setId_jugador(int id_jugador) {
-		this.id_jugador = id_jugador;
+	public void setIdJugador(int id) {
+		this.id = id;
 	}
 
 	public String getDni() {
@@ -66,12 +66,12 @@ public class Jugador {
 		this.apellido = apellido;
 	}
 
-	public int getId_equipo() {
-		return id_equipo;
+	public int getIdEquipo() {
+		return idEquipo;
 	}
 
-	public void setId_equipo(int id_equipo) {
-		this.id_equipo = id_equipo;
+	public void setIdEquipo(int idEquipo) {
+		this.idEquipo = idEquipo;
 	}
 
 }
