@@ -25,12 +25,19 @@
         <beans:property name="suffix" value=".jsp" />
     </beans:bean>
 
+
+    <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <beans:property name="location">
+            <beans:value>properties/database.properties</beans:value>
+		</beans:property>
+	</beans:bean>
+
     <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
         destroy-method="close">
-        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url" value="jdbc:mysql://localhost:3306/TestDB" />
-        <beans:property name="username" value="pankaj" />
-        <beans:property name="password" value="pankaj123" />
+        <beans:property name="driverClassName" value="${jdbc.driverClassName}" />
+        <beans:property name="url" value="${jdbc.url}" />
+        <beans:property name="username" value="${jdbc.username}" />
+        <beans:property name="password" value="${jdbc.password}" />
     </beans:bean>
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
@@ -51,13 +58,15 @@
         </beans:property>
     </beans:bean>
     
-    <beans:bean id="personDAO" class="com.journaldev.spring.dao.PersonDAOImpl">
-        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    <beans:bean id="jugadorDAO" class="com.torneo.dao.JugadorDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"></beans:property>
     </beans:bean>
-    <beans:bean id="personService" class="com.journaldev.spring.service.PersonServiceImpl">
-        <beans:property name="personDAO" ref="personDAO"></beans:property>
+    
+    <beans:bean id="jugadorService" class="com.torneo.service.JugadorServiceImpl">
+        <beans:property name="jugadorDAO" ref="jugadorDAO"></beans:property>
     </beans:bean>
-    <context:component-scan base-package="com.journaldev.spring" />
+    
+    <context:component-scan base-package="com.torneo" />
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
     
