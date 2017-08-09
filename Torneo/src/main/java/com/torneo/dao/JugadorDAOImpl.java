@@ -18,17 +18,20 @@ public class JugadorDAOImpl implements JugadorDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
 	@SuppressWarnings("unchecked")
-	public List<Jugador> listJugador() {
+	public List<Jugador> listarJugadores() {
 		return (List<Jugador>) sessionFactory.getCurrentSession().createQuery("from Jugador").list();
 	}
 
+	public void insertarOrModificar(Jugador jugador) {
+		sessionFactory.getCurrentSession().saveOrUpdate(jugador);
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 }

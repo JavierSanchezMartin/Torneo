@@ -27,10 +27,10 @@ public class Equipo {
 		this.grupo = grupo;
 	}
 	
-	public int getIdEquipo() {
+	public int getId() {
 		return id;
 	}
-	public void setIdEquipo(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNombre() {

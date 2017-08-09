@@ -16,17 +16,21 @@ public class JugadorServiceImpl implements JugadorService {
 	@Autowired
 	private JugadorDAO jugadorDAO;
 
-	public JugadorDAO getJugadorDAO() {
-		return jugadorDAO;
-	}
-
-	public void setJugadorDAO(JugadorDAO jugadorDAO) {
-		this.jugadorDAO = jugadorDAO;
+	@Transactional
+	public List<Jugador> listarJugadores() {
+		return jugadorDAO.listarJugadores();
 	}
 
 	@Transactional
-	public List<Jugador> listJugador() {
-		return jugadorDAO.listJugador();
+	public void insertarOrModificar(Jugador jugador) {
+		jugadorDAO.insertarOrModificar(jugador);
 	}
-
+	
+	public JugadorDAO getJugadorDAO() {
+		return jugadorDAO;
+	}
+	
+	public void setJugadorDAO(JugadorDAO jugadorDAO) {
+		this.jugadorDAO = jugadorDAO;
+	}
 }

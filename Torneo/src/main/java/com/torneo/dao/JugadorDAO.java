@@ -6,6 +6,8 @@ import com.torneo.model.Jugador;
 
 public interface JugadorDAO {
 
-	public List<Jugador> listJugador();
+	public List<Jugador> listarJugadores();
+	
+	public void insertarOrModificar(Jugador jugador);
 	
 }

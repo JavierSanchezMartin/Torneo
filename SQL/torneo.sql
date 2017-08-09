@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2017 a las 08:40:31
+-- Tiempo de generación: 09-08-2017 a las 10:07:19
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `equipo` (
   `id_equipo` int(5) NOT NULL,
-  `nombre` varchar(25) NOT NULL
+  `nombre` varchar(25) NOT NULL,
+  `grupo` int(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`id_equipo`, `nombre`) VALUES
-(1, 'Los Machotes'),
-(2, 'UD Fuckers'),
-(3, 'CD Ibatis');
+INSERT INTO `equipo` (`id_equipo`, `nombre`, `grupo`) VALUES
+(1, 'Los Machotes', 1),
+(2, 'UD Fuckers', 1),
+(3, 'CD Ibatis', 1);
 
 -- --------------------------------------------------------
 

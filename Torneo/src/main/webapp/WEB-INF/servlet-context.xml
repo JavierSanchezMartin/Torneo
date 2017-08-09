@@ -66,7 +66,13 @@
         <beans:property name="jugadorDAO" ref="jugadorDAO"></beans:property>
     </beans:bean>
     
+    <beans:bean id="equipoDAO" class="com.torneo.dao.EquipoDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"></beans:property>
+    </beans:bean>
     
+    <beans:bean id="equipoService" class="com.torneo.service.EquipoServiceImpl">
+        <beans:property name="equipoDAO" ref="equipoDAO"></beans:property>
+    </beans:bean>
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
     

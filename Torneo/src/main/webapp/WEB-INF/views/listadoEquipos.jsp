@@ -9,21 +9,13 @@
 		<title>Torneo</title>
 	</head>
 	<body>
-		<div class="container" align="center">
-		    <h2>Menu principal</h2>
-	    	<div class="col-xs-12 col-sm-4">
-			<a href="/Torneo/formularioEquipo"> <!-- <img
-				class="img-responsive center-block"
-
-				src="../img/torneo.png'/>" />
-				Torneos
-
-				src="WEB-INF/img/equipo.png" /> -->
-				Añadir Equipo
-
-			</a>
-			<a href="/Torneo/listadoEquipos">Listado Equipos</a>
-		</div>
-	    </div>
+	    <h2>Listado de Equipos</h2>
+	    <c:if test="${!ListadoDeEquipos.isEmpty()}">
+	    <ul>
+	        <c:forEach items="${ListadoDeEquipos}" var="equipo">
+	    	<li>${equipo.nombre}</li>
+	        </c:forEach>
+	    </ul>
+	    </c:if>
 	</body>
 </html>
