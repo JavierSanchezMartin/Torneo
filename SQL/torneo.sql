@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2017 a las 10:24:50
+-- Tiempo de generación: 09-08-2017 a las 08:40:31
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -30,9 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `equipo` (
   `id_equipo` int(5) NOT NULL,
-  `nombre` varchar(25) NOT NULL,
-  `id_partido` int(5) NOT NULL
+  `nombre` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`id_equipo`, `nombre`) VALUES
+(1, 'Los Machotes'),
+(2, 'UD Fuckers'),
+(3, 'CD Ibatis');
 
 -- --------------------------------------------------------
 
@@ -48,6 +56,18 @@ CREATE TABLE `jugador` (
   `id_equipo` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `jugador`
+--
+
+INSERT INTO `jugador` (`id_jugador`, `dni`, `nombre`, `apellido`, `id_equipo`) VALUES
+(1, '01231245Q', 'Paco', 'Rodríguez', 1),
+(2, '01912745Q', 'Elver', 'Galarga', 1),
+(3, '12351212E', 'Luis', 'Luis', 2),
+(4, '51123135D', 'Pepe', 'Suarez', 3),
+(5, '58312314A', 'Ambrosio', 'Dante', 3),
+(6, '16892315D', 'Clotilde', 'Cordoba', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -59,7 +79,8 @@ CREATE TABLE `partido` (
   `id_torneo` int(5) NOT NULL,
   `equipo_local` int(5) NOT NULL,
   `equipo_visitante` int(5) NOT NULL,
-  `fase` varchar(25) NOT NULL
+  `fase` varchar(25) NOT NULL,
+  `ronda` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -76,6 +97,13 @@ CREATE TABLE `torneo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `torneo`
+--
+
+INSERT INTO `torneo` (`id_torneo`, `nombre`, `estado`, `fecha`) VALUES
+(1, 'Liga Axpe', 1, '2017');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -83,8 +111,7 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`id_equipo`),
-  ADD KEY `id_partido` (`id_partido`);
+  ADD PRIMARY KEY (`id_equipo`);
 
 --
 -- Indices de la tabla `jugador`
@@ -116,12 +143,12 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `id_equipo` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_equipo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jugador` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
@@ -131,16 +158,10 @@ ALTER TABLE `partido`
 -- AUTO_INCREMENT de la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  MODIFY `id_torneo` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_torneo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`id_partido`) REFERENCES `partido` (`id_partido`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `jugador`
