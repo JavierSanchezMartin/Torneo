@@ -16,12 +16,15 @@ public class Equipo {
 	private int id;
 	@Column(name = "NOMBRE")
 	private String nombre;
+	@Column(name = "grupo")
+	private int grupo;
 	
 	public Equipo() {}
 	
-	public Equipo(int id, String nombre) {
+	public Equipo(int id, String nombre, int grupo) {
 		this.id = id;
 		this.nombre = nombre;
+		this.grupo = grupo;
 	}
 	
 	public int getIdEquipo() {
@@ -35,5 +38,11 @@ public class Equipo {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	public int getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(int grupo) {
+		this.grupo = grupo;
 	}
 }
