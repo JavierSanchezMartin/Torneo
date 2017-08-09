@@ -15,7 +15,7 @@ public class Torneo {
 	@Id
     @GeneratedValue
     @Column(name = "ID_EQUIPO")
-	private int id_torneo;
+	private int id;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	@Column(name = "ESTADO")
@@ -25,18 +25,18 @@ public class Torneo {
 	
 	public Torneo() {}
 	
-	public Torneo(int id_torneo, String nombre, int estado, Date fecha) {
-		this.id_torneo = id_torneo;
+	public Torneo(int id, String nombre, int estado, Date fecha) {
+		this.id = id;
 		this.nombre = nombre;
 		this.estado = estado;
 		this.fecha = fecha;
 	}
 	
-	public int getId_torneo() {
-		return id_torneo;
+	public int getIdTorneo() {
+		return id;
 	}
-	public void setId_torneo(int id_torneo) {
-		this.id_torneo = id_torneo;
+	public void setIdTorneo(int id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;

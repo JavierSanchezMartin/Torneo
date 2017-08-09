@@ -13,48 +13,56 @@ public class Partido {
 	@Id
     @GeneratedValue
     @Column(name = "ID_PARTIDO")
-	private int id_partido;
+	private int id;
 	@Column(name = "ID_TORNEO")
-	private int id_torneo;
+	private int idTorneo;
 	@Column(name = "EQUIPO_LOCAL")
-	private int equipo_local;
+	private int equipoLocal;
 	@Column(name = "EQUIPO_VISITANTE")
-	private int equipo_visitante;
+	private int equipoVisitante;
+	@Column(name = "RONDA")
+	private String ronda;
 	@Column(name = "FASE")
 	private String fase;
 	
 	public Partido() {}
 	
-	public Partido(int id_partido, int id_torneo, int equipo_local, int equipo_visitante, String fase) {
-		this.id_partido = id_partido;
-		this.id_torneo = id_torneo;
-		this.equipo_local = equipo_local;
-		this.equipo_visitante = equipo_visitante;
+	public Partido(int id, int idTorneo, int equipoLocal, int equipoVisitante, String fase) {
+		this.id = id;
+		this.idTorneo = idTorneo;
+		this.equipoLocal = equipoLocal;
+		this.equipoVisitante = equipoVisitante;
 		this.fase = fase;
 	}
-	public int getId_partido() {
-		return id_partido;
+	public int getIdPartido() {
+		return id;
 	}
-	public void setId_partido(int id_partido) {
-		this.id_partido = id_partido;
+	public void setIdPartido(int id) {
+		this.id = id;
 	}
-	public int getId_torneo() {
-		return id_torneo;
+	public int getIdTorneo() {
+		return idTorneo;
 	}
-	public void setId_torneo(int id_torneo) {
-		this.id_torneo = id_torneo;
+	public void setId_torneo(int idTorneo) {
+		this.idTorneo = idTorneo;
 	}
-	public int getEquipo_local() {
-		return equipo_local;
+	public int getEquipoLocal() {
+		return equipoLocal;
 	}
-	public void setEquipo_local(int equipo_local) {
-		this.equipo_local = equipo_local;
+	public void setEquipoLocal(int equipoLocal) {
+		this.equipoLocal = equipoLocal;
 	}
-	public int getEquipo_visitante() {
-		return equipo_visitante;
+	public int getEquipoVisitante() {
+		return equipoVisitante;
 	}
-	public void setEquipo_visitante(int equipo_visitante) {
-		this.equipo_visitante = equipo_visitante;
+	public void setEquipo_visitante(int equipoVisitante) {
+		this.equipoVisitante = equipoVisitante;
+	}
+	public String getRonda() {
+		return ronda;
+	}
+	public void setRonda(String ronda) {
+		this.ronda = ronda;
 	}
 	public String getFase() {
 		return fase;

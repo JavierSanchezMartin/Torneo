@@ -13,22 +13,22 @@ public class Equipo {
 	@Id
     @GeneratedValue
     @Column(name = "ID_EQUIPO")
-	private int id_equipo;
+	private int id;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
 	public Equipo() {}
 	
-	public Equipo(int id_equipo, String nombre) {
-		this.id_equipo = id_equipo;
+	public Equipo(int id, String nombre) {
+		this.id = id;
 		this.nombre = nombre;
 	}
 	
-	public int getId_equipo() {
-		return id_equipo;
+	public int getIdEquipo() {
+		return id;
 	}
-	public void setId_equipo(int id_equipo) {
-		this.id_equipo = id_equipo;
+	public void setIdEquipo(int id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;

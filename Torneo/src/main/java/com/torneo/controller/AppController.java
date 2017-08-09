@@ -15,7 +15,12 @@ public class AppController {
 	@Autowired
 	private JugadorService jugadorService;
 	
-	@RequestMapping("/index")
+	@RequestMapping("/")
+	public String menu() {
+		return "menu";
+	}
+	
+	@RequestMapping("/jugadores")
 	public String listarJugadores(Map<String, Object> map) {
 		map.put("ListadoDeJugadores", jugadorService.listJugador());
 		return "listadoJugadores";
