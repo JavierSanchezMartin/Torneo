@@ -10,20 +10,14 @@
 	</head>
 	<body>
 		<div class="container" align="center">
-		    <h2>Menu principal</h2>
+		    <h2>Añadir equipo</h2>
 	    	<div class="col-xs-12 col-sm-4">
-			<a href="/Torneo/formularioEquipo"> <!-- <img
-				class="img-responsive center-block"
-
-				src="../img/torneo.png'/>" />
-				Torneos
-
-				src="WEB-INF/img/equipo.png" /> -->
-				Añadir Equipo
-
-			</a>
-			<a href="/Torneo/listadoEquipos">Listado Equipos</a>
-		</div>
+				<form:form action="anadirEquipo" method="post" modelAttribute="equipo">
+					<form:label path="nombre">Nombre: </form:label>
+					<form:input path="nombre" type="text" name="nombre" />
+					<input type="submit" value="Añadir" />
+				</form:form>
+			</div>
 	    </div>
 	</body>
 </html>

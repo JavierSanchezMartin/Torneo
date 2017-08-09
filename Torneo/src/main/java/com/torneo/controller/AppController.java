@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.torneo.model.Equipo;
 import com.torneo.model.Jugador;
+import com.torneo.service.EquipoService;
 import com.torneo.service.JugadorService;
 
 @Controller
@@ -28,12 +30,30 @@ public class AppController {
 		return "menu";
 	}
 	
-	@RequestMapping("/jugadores")
-	public String listarJugadores(Map<String, Object> map) {
-		map.put("ListadoDeJugadores", jugadorService.listarJugador());
-		return "listadoJugadores";
+	@RequestMapping("/formularioEquipo")
+	public ModelAndView formularioEquipo() {
+		return new ModelAndView("formularioEquipo", "equipo", new Equipo());
 	}
 	
+	@RequestMapping("/anadirEquipo")
+	public String anadirEquipo(Equipo equipo) {
+		System.out.println(equipo.getNombre());
+		equipoService.anadirEquipo(equipo);
+		return "formularioEquipo";
+	}
+	
+	@RequestMapping("/listadoEquipos")
+	public String listarEquipos(Map<String, Object> map) {
+		map.put("ListadoDeEquipos", equipoService.listarEquipos());
+		return "listadoEquipos";
+	}
+	
+	@RequestMapping("/jugadores")
+	public String listarJugadores(Map<String, Object> map) {
+		map.put("ListadoDeJugadores", jugadorService.listarJugadores());
+		return "listadoJugadores";
+	}
+
 	@RequestMapping("/FormularioJugador")
 	public String formularioJugador(Map<String, Object> map) {
 		List<Equipo> listaEquipos = equipoService.listarEquipos();

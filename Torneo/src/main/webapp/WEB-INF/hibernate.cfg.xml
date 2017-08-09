@@ -6,5 +6,6 @@
 <hibernate-configuration>
     <session-factory>
         <mapping class="com.torneo.model.Jugador" />
+        <mapping class="com.torneo.model.Equipo" />
     </session-factory>
 </hibernate-configuration>
