@@ -14,7 +14,7 @@
 	    	<div class="col-xs-12 col-sm-4">
 			<a href="/Torneo/torneos"> <img
 				class="img-responsive center-block"
-				src="<s:url value='./img/torneo.png'/>" />
+				src="../img/torneo.png'/>" />
 				Torneos
 			</a>
 		</div>
