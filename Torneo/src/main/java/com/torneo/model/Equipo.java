@@ -19,15 +19,14 @@ public class Equipo {
 	
 	public Equipo() {}
 	
-	public Equipo(int id, String nombre) {
-		this.id = id;
+	public Equipo(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	public int getIdEquipo() {
+	public int getId() {
 		return id;
 	}
-	public void setIdEquipo(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNombre() {
