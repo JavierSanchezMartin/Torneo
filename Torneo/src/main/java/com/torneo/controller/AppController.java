@@ -3,8 +3,6 @@ package com.torneo.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,7 +46,7 @@ public class AppController {
 		return "listadoEquipos";
 	}
 	
-	@RequestMapping("/jugadores")
+	@RequestMapping("/ListarJugadores")
 	public String listarJugadores(Map<String, Object> map) {
 		map.put("ListadoDeJugadores", jugadorService.listarJugadores());
 		return "listadoJugadores";
@@ -63,8 +61,8 @@ public class AppController {
 	}
 	
 	@RequestMapping(value = "/CrearJugador", method = RequestMethod.POST)
-	public String CreateaJugador(@ModelAttribute("jugador") Jugador jugador) {
-		System.out.println("Nuevo jugador nombre: " + jugador.getNombre());
+	public String createaJugador(@ModelAttribute("jugador") Jugador jugador) {
+		jugadorService.insertarOrModificar(jugador);
 		return "redirect:/";
 	}
 	

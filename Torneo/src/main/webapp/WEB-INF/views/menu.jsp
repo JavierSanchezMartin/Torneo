@@ -11,19 +11,25 @@
 	<body>
 		<div class="container" align="center">
 		    <h2>Menu principal</h2>
-	    	<div class="col-xs-12 col-sm-4">
-			<a href="/Torneo/formularioEquipo"> <!-- <img
-				class="img-responsive center-block"
-
-				src="../img/torneo.png'/>" />
-				Torneos
-
-				src="WEB-INF/img/equipo.png" /> -->
-				Añadir Equipo
-
-			</a>
-			<a href="/Torneo/listadoEquipos">Listado Equipos</a>
-		</div>
+		    <div class="row">
+		    	<div class="col-xs-12 col-sm-4">
+					<a href="/Torneo/formularioEquipo"> <!-- <img
+						class="img-responsive center-block"
+		
+						src="../img/torneo.png'/>" />
+						Torneos
+		
+						src="WEB-INF/img/equipo.png" /> -->
+						Añadir Equipo
+		
+					</a>
+					<a href="/Torneo/listadoEquipos">Listado Equipos</a>
+		        </div>
+		        <div class="col-xs-12 col-sm-4">
+		            <a href="/Torneo/FormularioJugador">Crear jugador</a>
+		            <a href="/Torneo/ListarJugadores">Listado de jugadores</a>
+		        </div>
+		    </div>
 	    </div>
 	</body>
 </html>
