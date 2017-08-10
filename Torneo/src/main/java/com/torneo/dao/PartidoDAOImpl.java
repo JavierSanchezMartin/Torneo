@@ -27,7 +27,6 @@ public class PartidoDAOImpl implements PartidoDAO{
 	@SuppressWarnings("unchecked")
 	public List<Partido> partidosJugadosPorFase(int fase) {
 		return (List<Partido>) sessionFactory.getCurrentSession().createQuery("from Partido").list();
-
 	}
 
 }

@@ -36,6 +36,11 @@ public class EquipoDAOImpl implements EquipoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Equipo> listarEquipos() {
 		return (List<Equipo>) sessionFactory.getCurrentSession().createQuery("from Equipo").list();
-	}
+	}	
 
+	@SuppressWarnings("unchecked")
+	public int getCountGrupos() {
+		return 0;
+	}
+	
 }
