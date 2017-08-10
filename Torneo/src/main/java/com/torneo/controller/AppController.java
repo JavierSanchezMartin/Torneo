@@ -14,6 +14,7 @@ import com.torneo.model.Equipo;
 import com.torneo.model.Jugador;
 import com.torneo.service.EquipoService;
 import com.torneo.service.JugadorService;
+import com.torneo.service.PartidoService;
 
 @Controller
 public class AppController {
@@ -22,6 +23,9 @@ public class AppController {
 	private JugadorService jugadorService;
 	@Autowired
 	private EquipoService equipoService;
+	@Autowired
+	private PartidoService partidoService;
+	
 	
 	@RequestMapping("/")
 	public String menu() {

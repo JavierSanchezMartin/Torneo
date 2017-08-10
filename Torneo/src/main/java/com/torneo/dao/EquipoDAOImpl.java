@@ -15,18 +15,6 @@ public class EquipoDAOImpl implements EquipoDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public EquipoDAOImpl(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
 	public Boolean anadirEquipo(Equipo equipo) {
 		System.out.println("DAO: "+equipo.getNombre());
 		sessionFactory.getCurrentSession().save(equipo);
@@ -38,9 +26,20 @@ public class EquipoDAOImpl implements EquipoDAO {
 		return (List<Equipo>) sessionFactory.getCurrentSession().createQuery("from Equipo").list();
 	}	
 
-	@SuppressWarnings("unchecked")
 	public int getCountGrupos() {
 		return 0;
+	}
+	
+	public EquipoDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 	
 }

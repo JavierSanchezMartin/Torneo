@@ -4,11 +4,14 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.torneo.dao.PartidoDAO;
 import com.torneo.model.Partido;
 
-public class PartidoDAOImpl implements PartidoDAO{
+@Repository
+public class PartidoDAOImpl implements PartidoDAO {
+
 	@Autowired
 	private SessionFactory sessionFactory;
 

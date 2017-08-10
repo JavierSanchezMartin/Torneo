@@ -4,8 +4,10 @@
  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    <session-factory>
-        <mapping class="com.torneo.model.Jugador" />
-        <mapping class="com.torneo.model.Equipo" />
-    </session-factory>
+	<session-factory>
+		<mapping class="com.torneo.model.Jugador" />
+		<mapping class="com.torneo.model.Equipo" />
+		<mapping class="com.torneo.model.Partido" />
+		<mapping class="com.torneo.model.Torneo" />
+	</session-factory>
 </hibernate-configuration>
