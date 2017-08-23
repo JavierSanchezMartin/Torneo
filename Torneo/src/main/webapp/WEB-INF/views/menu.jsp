@@ -7,27 +7,25 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Torneo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+	    <link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<div class="container" align="center">
+		<div class="container main">
 		    <h2>Menu principal</h2>
 		    <div class="row">
-		    	<div class="col-xs-12 col-sm-4">
-					<a href="/Torneo/formularioEquipo"> <!-- <img
-						class="img-responsive center-block"
-		
-						src="../img/torneo.png'/>" />
-						Torneos
-		
-						src="WEB-INF/img/equipo.png" /> -->
-						Añadir Equipo
-		
+		    	<div class="col-xs-12 col-sm-6 main-block">
+					<a href="/Torneo/listadoEquipos">
+					   <img	class="img-responsive center-block" src="img/equipo.png" alt="Equipos"/>
+					   <h3>Equipos</h3>
 					</a>
-					<a href="/Torneo/listadoEquipos">Listado Equipos</a>
 		        </div>
-		        <div class="col-xs-12 col-sm-4">
-		            <a href="/Torneo/FormularioJugador">Crear jugador</a>
-		            <a href="/Torneo/ListarJugadores">Listado de jugadores</a>
+		        <div class="col-xs-12 col-sm-6 main-block">
+		            <a href="/Torneo/ListarJugadores">
+		                <img class="img-responsive center-block" src="img/jugador.png" alt="Jugadores" />
+		                <h3>Jugadores</h3>
+		            </a>
 		        </div>
 		    </div>
 	    </div>

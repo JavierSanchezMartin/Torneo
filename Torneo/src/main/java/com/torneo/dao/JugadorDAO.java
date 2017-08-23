@@ -10,4 +10,7 @@ public interface JugadorDAO {
 	
 	public void insertarOrModificar(Jugador jugador);
 	
+	public Jugador consultarJugador(int idJugador);
+	
+	public void eliminarJugador(Jugador jugador);
 }

@@ -10,4 +10,5 @@ public interface EquipoService {
 	
 	public List<Equipo> listarEquipos();
 	
+	public Equipo consultarEquipo(int idEquipo);
 }

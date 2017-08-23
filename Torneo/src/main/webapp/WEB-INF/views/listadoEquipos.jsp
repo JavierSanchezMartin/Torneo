@@ -6,16 +6,34 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Torneo</title>
+		<title>Torneo | Equipos</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-	    <h2>Listado de Equipos</h2>
-	    <c:if test="${!ListadoDeEquipos.isEmpty()}">
-	    <ul>
-	        <c:forEach items="${ListadoDeEquipos}" var="equipo">
-	    	<li>${equipo.nombre}</li>
-	        </c:forEach>
-	    </ul>
-	    </c:if>
+        <header class="team-header">
+		    <h2>Listado de Equipos</h2>
+        </header>
+        <section class="team-navbar">
+			<a href="/Torneo">
+			    <button class="btn btn-danger">Atrás</button>
+			</a>
+			<a href="/Torneo/formularioEquipo">
+			    <button class="btn btn-success">Crear equipo</button>
+			</a>
+        </section>
+	    <section class="team-body">
+		    <c:if test="${!ListadoDeEquipos.isEmpty()}">
+                <c:forEach items="${ListadoDeEquipos}" var="equipo">
+                    <article>
+                        <h3>${equipo.nombre}</h3>
+                    </article>
+                </c:forEach>
+            </c:if>
+            <c:if test="${ListadoDeEquipos.isEmpty()}">
+                <h3>No existe ningún equipo</h3>
+            </c:if>
+	    </section>
 	</body>
 </html>

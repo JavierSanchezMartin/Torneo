@@ -14,6 +14,10 @@ public class JugadorDAOImpl implements JugadorDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	/**
+	 * Constructor
+	 * @param sessionFactory
+	 */
 	public JugadorDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
@@ -27,10 +31,33 @@ public class JugadorDAOImpl implements JugadorDAO {
 		sessionFactory.getCurrentSession().saveOrUpdate(jugador);
 	}
 
+	public Jugador consultarJugador(int idJugador) {
+		String select = "FROM Jugador WHERE id = " + idJugador;
+		@SuppressWarnings("unchecked")
+		List<Jugador> listaJugadores = (List<Jugador>) sessionFactory.getCurrentSession().createQuery(select).list();
+		
+		if (listaJugadores != null && !listaJugadores.isEmpty())
+			return listaJugadores.get(0);
+		
+		return null;
+	}
+	
+	public void eliminarJugador(Jugador jugador) {
+		sessionFactory.getCurrentSession().delete(jugador);
+	}
+	
+	/**
+	 * Getter SessionFactory.
+	 * @return
+	 */
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
 	
+	/**
+	 * Setter SessionFactory
+	 * @param sessionFactory
+	 */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

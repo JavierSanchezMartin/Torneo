@@ -1,0 +1,8 @@
+* {
+	font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+/** Menú principal */
+.main {	text-align: center;}
+    .main .main-block { padding: 10px 20px;}
+        .main .main-block img { border: 1px solid;}

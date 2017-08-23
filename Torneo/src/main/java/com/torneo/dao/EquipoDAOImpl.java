@@ -29,6 +29,12 @@ public class EquipoDAOImpl implements EquipoDAO {
 	public int getCountGrupos() {
 		return 0;
 	}
+
+	public Equipo consultarEquipo(int idEquipo) {
+		String select = "FROM Equipo WHERE id = " + idEquipo;
+		List<Equipo> listaEquipo = (List<Equipo>) sessionFactory.getCurrentSession().createQuery(select).list();
+		return listaEquipo.get(0);
+	}
 	
 	public EquipoDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;

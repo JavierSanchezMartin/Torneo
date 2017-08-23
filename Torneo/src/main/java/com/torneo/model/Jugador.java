@@ -6,10 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.torneo.service.EquipoService;
+
 @Entity
 @Table(name = "JUGADOR")
 public class Jugador {
-
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "ID_JUGADOR")
@@ -33,12 +37,12 @@ public class Jugador {
 		this.apellido = apellido;
 		this.idEquipo = idEquipo;
 	}
-
-	public int getIdJugador() {
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setIdJugador(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

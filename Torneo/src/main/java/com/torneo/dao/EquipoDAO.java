@@ -10,4 +10,5 @@ public interface EquipoDAO {
 	
 	public List<Equipo> listarEquipos();
 	public int getCountGrupos();
+	public Equipo consultarEquipo(int idEquipo);
 }

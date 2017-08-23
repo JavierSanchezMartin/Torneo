@@ -35,6 +35,15 @@ public class EquipoServiceImpl implements EquipoService {
 	public List<Equipo> listarEquipos() {
 		return equipoDAO.listarEquipos();
 	}
+	
+	@Transactional
+	public Equipo consultarEquipo(int idEquipo) {
+		return equipoDAO.consultarEquipo(idEquipo);
+	}
+	
+	public EquipoServiceImpl(EquipoDAO equipoDAO) {
+		this.equipoDAO = equipoDAO;
+	}
 
 	public EquipoDAO getEquipoDAO() {
 		return equipoDAO;

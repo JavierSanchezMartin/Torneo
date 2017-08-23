@@ -26,6 +26,16 @@ public class JugadorServiceImpl implements JugadorService {
 		jugadorDAO.insertarOrModificar(jugador);
 	}
 	
+	@Transactional
+	public Jugador consultarJugador(int idJugador) {
+		return jugadorDAO.consultarJugador(idJugador);
+	}
+
+	@Transactional
+	public void eliminarJugador(Jugador jugador) {
+		jugadorDAO.eliminarJugador(jugador);
+	}
+	
 	public JugadorDAO getJugadorDAO() {
 		return jugadorDAO;
 	}
@@ -33,4 +43,5 @@ public class JugadorServiceImpl implements JugadorService {
 	public void setJugadorDAO(JugadorDAO jugadorDAO) {
 		this.jugadorDAO = jugadorDAO;
 	}
+
 }
