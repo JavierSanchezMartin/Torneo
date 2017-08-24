@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2017 a las 10:07:19
+-- Tiempo de generación: 24-08-2017 a las 09:14:43
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -62,12 +62,13 @@ CREATE TABLE `jugador` (
 --
 
 INSERT INTO `jugador` (`id_jugador`, `dni`, `nombre`, `apellido`, `id_equipo`) VALUES
-(1, '01231245Q', 'Paco', 'Rodríguez', 1),
+(1, '01231245Q', 'Paquito', 'Rodríguez', 1),
 (2, '01912745Q', 'Elver', 'Galarga', 1),
 (3, '12351212E', 'Luis', 'Luis', 2),
 (4, '51123135D', 'Pepe', 'Suarez', 3),
 (5, '58312314A', 'Ambrosio', 'Dante', 3),
-(6, '16892315D', 'Clotilde', 'Cordoba', 2);
+(6, '16892315D', 'Clotilde', 'Cordoba', 2),
+(7, '12341234A', 'Antonio', 'Soto', 1);
 
 -- --------------------------------------------------------
 
@@ -144,12 +145,12 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `id_equipo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_equipo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_jugador` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
