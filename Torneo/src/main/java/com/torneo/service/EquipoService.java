@@ -11,4 +11,8 @@ public interface EquipoService {
 	public List<Equipo> listarEquipos();
 	
 	public Equipo consultarEquipo(int idEquipo);
+	
+	public void insertarOrModificar(Equipo equipo);
+	
+	public void eliminarEquipo(Equipo equipo);
 }

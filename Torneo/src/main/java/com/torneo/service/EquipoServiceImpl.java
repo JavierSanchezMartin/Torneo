@@ -41,6 +41,16 @@ public class EquipoServiceImpl implements EquipoService {
 		return equipoDAO.consultarEquipo(idEquipo);
 	}
 	
+	@Transactional
+	public void insertarOrModificar(Equipo equipo) {
+		equipoDAO.insertarOrModificar(equipo);
+	}
+	
+	@Transactional
+	public void eliminarEquipo(Equipo equipo) {
+		equipoDAO.eliminarEquipo(equipo);
+	}
+	
 	public EquipoServiceImpl(EquipoDAO equipoDAO) {
 		this.equipoDAO = equipoDAO;
 	}

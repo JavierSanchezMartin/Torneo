@@ -32,28 +32,71 @@ public class AppController {
 
 	@RequestMapping("/")
 	public String menu() {
-		return "menu";
+		return "Menu";
 	}
 
-	@RequestMapping("/formularioEquipo")
+	@RequestMapping("/formulario-equipo")
 	public ModelAndView formularioEquipo() {
-		return new ModelAndView("formularioEquipo", "equipo", new Equipo());
+		return new ModelAndView("FormularioEquipo", "equipo", new Equipo());
 	}
 
-	@RequestMapping("/anadirEquipo")
+	@RequestMapping("/anadir-equipo")
 	public String anadirEquipo(Equipo equipo) {
 		System.out.println(equipo.getNombre());
 		equipoService.anadirEquipo(equipo);
-		return "formularioEquipo";
+		return "FormularioEquipo";
 	}
 
-	@RequestMapping("/listadoEquipos")
+	@RequestMapping("/listado-equipos")
 	public String listarEquipos(Map<String, Object> map) {
 		map.put("ListadoDeEquipos", equipoService.listarEquipos());
-		return "listadoEquipos";
+		return "ListadoEquipos";
+		//return new ModelAndView("ListadoEquipos", "ListadoDeEquipos", equipoService.listarEquipos());
 	}
+	
+	@RequestMapping(value = "/crear-equipo", method = RequestMethod.POST)
+	public String crearEquipo(@ModelAttribute("equipo") Equipo equipo, @RequestParam String action) {
+		
+		if (action.equals("Crear")) {			
+			equipoService.insertarOrModificar(equipo);
+		}
+		
+		return "redirect:/listado-equipos";
+	}
+	
+	@RequestMapping(value = "/editar-equipo",  method = RequestMethod.GET)
+	public String editarEquipo(@RequestParam String idEquipo, Map<String, Object> map) {
+		
+		Equipo equipo = equipoService.consultarEquipo(Integer.parseInt(idEquipo));
+		
+		map.put("equipo", equipo);
+		
+		return "FormularioEquipo";
+	}
+	
+	@RequestMapping("/eliminar-equipo")
+	public String eliminarEquipo(@RequestParam String idEquipo) {
+		
+		Equipo equipo = equipoService.consultarEquipo(Integer.parseInt(idEquipo));
+		equipoService.eliminarEquipo(equipo);
+		
+		return "redirect:/listado-equipos";
+	}
+	
+	@RequestMapping("/consultar-equipo")
+	@ResponseBody
+	public Equipo consultarEquipo(@RequestParam String idEquipo) {
+		
+		return (Equipo) equipoService.consultarEquipo(Integer.parseInt(idEquipo));
+	}
+	
+	
+	
+	
+	
+	
 
-	@RequestMapping("/ListarJugadores")
+	@RequestMapping("/listado-jugadores")
 	public String listarJugadores(Map<String, Object> map, HttpServletRequest request) {
 		
 		List<Jugador> listaJugadores = jugadorService.listarJugadores();
@@ -62,18 +105,18 @@ public class AppController {
 		request.setAttribute("session", equipoService);
 		
 		map.put("ListadoDeJugadores", listaJugadores);
-		return "listadoJugadores";
+		return "ListadoJugadores";
 	}
 
-	@RequestMapping("/FormularioJugador")
+	@RequestMapping("/formulario-jugador")
 	public String formularioJugador(Map<String, Object> map) {
 		List<Equipo> listaEquipos = equipoService.listarEquipos();
 		map.put("jugador", new Jugador());
 		map.put("listaEquipos", listaEquipos);
-		return "FormJugador";
+		return "FormularioJugador";
 	}
 	
-	@RequestMapping(value = "/EditarJugador",  method = RequestMethod.GET)
+	@RequestMapping(value = "/editar-jugador",  method = RequestMethod.GET)
 	public String editarJugador(@RequestParam String idJugador, Map<String, Object> map) {
 		
 		Jugador jugador = jugadorService.consultarJugador(Integer.parseInt(idJugador));
@@ -82,29 +125,29 @@ public class AppController {
 		map.put("jugador", jugador);
 		map.put("listaEquipos", listaEquipos);
 		
-		return "FormJugador";
+		return "FormularioJugador";
 	}
 
-	@RequestMapping(value = "/CrearJugador", method = RequestMethod.POST)
+	@RequestMapping(value = "/crear-jugador", method = RequestMethod.POST)
 	public String crearJugador(@ModelAttribute("jugador") Jugador jugador, @RequestParam String action) {
 		
 		if (action.equals("Crear")) {			
 			jugadorService.insertarOrModificar(jugador);
 		}
 		
-		return "redirect:/ListarJugadores";
+		return "redirect:/listado-jugadores";
 	}
 
-	@RequestMapping("/EliminarJugador")
+	@RequestMapping("/eliminar-jugador")
 	public String eliminarJugador(@RequestParam String idJugador) {
 		
 		Jugador jugador = jugadorService.consultarJugador(Integer.parseInt(idJugador));
 		jugadorService.eliminarJugador(jugador);
 		
-		return "redirect:/ListarJugadores";
+		return "redirect:/listado-jugadores";
 	}
 	
-	@RequestMapping("/consultarJugador")
+	@RequestMapping("/consultar-jugador")
 	@ResponseBody
 	public Jugador consultarJugador(@RequestParam String idJugador) {
 		

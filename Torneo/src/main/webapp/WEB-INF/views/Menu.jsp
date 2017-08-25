@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Torneo</title>
+		<title>Torneo | Menu</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
 	    <link rel="stylesheet" href="css/style.css" />
@@ -16,13 +16,13 @@
 		    <h2>Menu principal</h2>
 		    <div class="row">
 		    	<div class="col-xs-12 col-sm-6 main-block">
-					<a href="/Torneo/listadoEquipos">
-					   <img	class="img-responsive center-block" src="img/equipo.png" alt="Equipos"/>
+					<a href="/Torneo/listado-equipos">
+					   <img	class="img-responsive center-block" src="img/balon.png" alt="Equipos"/>
 					   <h3>Equipos</h3>
 					</a>
 		        </div>
 		        <div class="col-xs-12 col-sm-6 main-block">
-		            <a href="/Torneo/ListarJugadores">
+		            <a href="/Torneo/listado-jugadores">
 		                <img class="img-responsive center-block" src="img/jugador.png" alt="Jugadores" />
 		                <h3>Jugadores</h3>
 		            </a>

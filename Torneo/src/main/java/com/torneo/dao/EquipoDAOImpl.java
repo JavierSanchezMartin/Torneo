@@ -24,8 +24,12 @@ public class EquipoDAOImpl implements EquipoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Equipo> listarEquipos() {
 		return (List<Equipo>) sessionFactory.getCurrentSession().createQuery("from Equipo").list();
-	}	
-
+	}
+	
+	public void eliminarEquipo(Equipo equipo) {
+		sessionFactory.getCurrentSession().delete(equipo);
+	}
+	
 	public int getCountGrupos() {
 		return 0;
 	}
@@ -34,6 +38,10 @@ public class EquipoDAOImpl implements EquipoDAO {
 		String select = "FROM Equipo WHERE id = " + idEquipo;
 		List<Equipo> listaEquipo = (List<Equipo>) sessionFactory.getCurrentSession().createQuery(select).list();
 		return listaEquipo.get(0);
+	}
+	
+	public void insertarOrModificar(Equipo equipo) {
+		sessionFactory.getCurrentSession().saveOrUpdate(equipo);
 	}
 	
 	public EquipoDAOImpl(SessionFactory sessionFactory) {

@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Editor de Jugador</title>
+		<title>Torneo | Jugadores</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css" />
@@ -24,7 +24,7 @@
 	        <div class="form-jugador">
 	            <div class="form-header">
 			        <h2>Formulario jugador</h2>
-			        <a href="ListarJugadores">
+			        <a href="listado-jugadores">
 			            <button class="btn btn-danger">
 			                <i class="glyphicon glyphicon-menu-left"></i> Volver
 			            </button>
@@ -39,7 +39,7 @@
 			         -->
 			        <c:if test="${jugador != null}">
 			            <div class="row">
-						    <form:form action="/Torneo/CrearJugador" method="post" modelAttribute="jugador" class="col-md-5">
+						    <form:form action="/Torneo/crear-jugador" method="post" modelAttribute="jugador" class="col-md-5">
 				                <form:hidden path="id" value="${jugador.id}"/>
 						        <div class="form-group">
 							        <form:label path="nombre">Nombre</form:label>

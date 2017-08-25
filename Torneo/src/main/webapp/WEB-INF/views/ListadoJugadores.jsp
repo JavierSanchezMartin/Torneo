@@ -65,7 +65,7 @@
 	    </header>
 	    <section class="player-navbar">
 	        <a href="/Torneo"><button class="btn btn-danger">Atrás</button></a>
-	        <a href="/Torneo/FormularioJugador">
+	        <a href="/Torneo/formulario-jugador">
 	            <button class="btn btn-success">Crear jugador</button>
 	        </a>
 	    </section>
@@ -98,12 +98,12 @@
 				    	            <button class="btn btn-default btn-ajax" data-toggle="modal" data-target="#modalJugador" data-id="<%= lista.get(i).getId() %>">
 	    			    	            <i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i>
 				    	            </button>
-				    	            <a href="EditarJugador?idJugador=<%= lista.get(i).getId() %>">
+				    	            <a href="editar-jugador?idJugador=<%= lista.get(i).getId() %>">
 	    			    	            <button class="btn btn-default">
 		    			    	            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
 	    			    	            </button>
 				    	            </a>
-				    	            <a href="EliminarJugador?idJugador=<%= lista.get(i).getId() %>">
+				    	            <a href="eliminar-jugador?idJugador=<%= lista.get(i).getId() %>">
 					    	            <button class="btn btn-danger">
 		    			    	            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
 					    	            </button>

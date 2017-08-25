@@ -11,4 +11,8 @@ public interface EquipoDAO {
 	public List<Equipo> listarEquipos();
 	public int getCountGrupos();
 	public Equipo consultarEquipo(int idEquipo);
+	
+	public void insertarOrModificar(Equipo equipo);
+	
+	public void eliminarEquipo(Equipo equipo);
 }
