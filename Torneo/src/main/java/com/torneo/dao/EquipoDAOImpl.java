@@ -44,6 +44,11 @@ public class EquipoDAOImpl implements EquipoDAO {
 		sessionFactory.getCurrentSession().saveOrUpdate(equipo);
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Equipo> listarEquiposAleatorio() {
+		return (List<Equipo>) sessionFactory.getCurrentSession().createQuery("from Equipo ORDER BY RAND()").list();
+	}
+	
 	public EquipoDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

@@ -15,4 +15,5 @@ public interface EquipoDAO {
 	public void insertarOrModificar(Equipo equipo);
 	
 	public void eliminarEquipo(Equipo equipo);
+	public List<Equipo> listarEquiposAleatorio();
 }
